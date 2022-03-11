@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+Test set: tqs.TqsStackTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.037 s <<< FAILURE! - in tqs.TqsStackTest
+emptyOnConst  Time elapsed: 0.006 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at tqs.TqsStackTest.emptyOnConst(TqsStackTest.java:23)
+
+popAll  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at tqs.TqsStackTest.popAll(TqsStackTest.java:74)
+
+pop  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <second> but was: <null>
+	at tqs.TqsStackTest.pop(TqsStackTest.java:49)
+
+peek  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: expected: <second> but was: <null>
+	org.opentest4j.AssertionFailedError: expected: <2> but was: <0>
+	at tqs.TqsStackTest.peek(TqsStackTest.java:57)
+
+push  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (1 failure)
+	org.opentest4j.AssertionFailedError: expected: <2> but was: <0>
+	at tqs.TqsStackTest.push(TqsStackTest.java:38)
+
+popEmpty  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.util.NoSuchElementException to be thrown, but nothing was thrown.
+	at tqs.TqsStackTest.popEmpty(TqsStackTest.java:83)
+
+peekEmpty  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.util.NoSuchElementException to be thrown, but nothing was thrown.
+	at tqs.TqsStackTest.peekEmpty(TqsStackTest.java:89)
+
