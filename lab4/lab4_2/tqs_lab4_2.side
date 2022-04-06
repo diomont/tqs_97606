@@ -40,18 +40,6 @@
       "targets": [],
       "value": "label=San Diego"
     }, {
-      "id": "badb3b42-236e-4c7e-9ede-90fee7f34c08",
-      "comment": "",
-      "command": "click",
-      "target": "css=.form-inline:nth-child(1) > option:nth-child(5)",
-      "targets": [
-        ["css=.form-inline:nth-child(1) > option:nth-child(5)", "css:finder"],
-        ["xpath=//option[@value='San Diego']", "xpath:attributes"],
-        ["xpath=//option[5]", "xpath:position"],
-        ["xpath=//option[contains(.,'San Diego')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
       "id": "31ab866b-81cf-4411-9534-86e41ffc0dc1",
       "comment": "",
       "command": "click",
@@ -74,19 +62,7 @@
       "id": "9ba0affa-96d2-4752-a5fa-30a1405dc148",
       "comment": "",
       "command": "click",
-      "target": "css=.form-inline:nth-child(4) > option:nth-child(5)",
-      "targets": [
-        ["css=.form-inline:nth-child(4) > option:nth-child(5)", "css:finder"],
-        ["xpath=//option[@value='New York']", "xpath:attributes"],
-        ["xpath=//select[2]/option[5]", "xpath:position"],
-        ["xpath=//option[contains(.,'New York')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "1f06613b-2b76-4650-a08f-3f0c40604503",
-      "comment": "",
-      "command": "click",
-      "target": "css=.btn-primary",
+      "target": "xpath=//input[@value='Find Flights']",
       "targets": [
         ["css=.btn-primary", "css:finder"],
         ["xpath=//input[@value='Find Flights']", "xpath:attributes"],
@@ -319,19 +295,7 @@
       "command": "select",
       "target": "id=cardType",
       "targets": [],
-      "value": "label=Diner's Club"
-    }, {
-      "id": "58850ab0-17a2-42c4-abb0-c4746f40de80",
-      "comment": "",
-      "command": "click",
-      "target": "css=option:nth-child(3)",
-      "targets": [
-        ["css=option:nth-child(3)", "css:finder"],
-        ["xpath=//option[@value='dinersclub']", "xpath:attributes"],
-        ["xpath=//select[@id='cardType']/option[3]", "xpath:idRelative"],
-        ["xpath=//option[3]", "xpath:position"]
-      ],
-      "value": ""
+      "value": "label=Visa"
     }, {
       "id": "fd568d20-aa6c-4464-b105-d687981893ba",
       "comment": "",
@@ -440,7 +404,7 @@
       "id": "2204592a-3647-44ec-a813-528a32e56990",
       "comment": "",
       "command": "click",
-      "target": "css=.btn-primary",
+      "target": "xpath=//input[@value='Purchase Flight']",
       "targets": [
         ["css=.btn-primary", "css:finder"],
         ["xpath=//input[@value='Purchase Flight']", "xpath:attributes"],
