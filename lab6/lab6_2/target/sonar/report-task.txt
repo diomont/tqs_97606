@@ -1,0 +1,6 @@
+projectKey=lab6_1
+serverUrl=http://127.0.0.1:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://127.0.0.1:9000/dashboard?id=lab6_1
+ceTaskId=AYAdW55Qtll03b593IFS
+ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AYAdW55Qtll03b593IFS
