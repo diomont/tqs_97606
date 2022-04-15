@@ -58,7 +58,11 @@ public class Cache<T> {
         this.timeToLive = timeToLive;
     }
 
-    public Optional<T> get(String request) {
+    public void add(String key, T value) {
+        
+    }
+
+    public Optional<T> get(String key) {
         return null;
     }
 

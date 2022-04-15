@@ -6,7 +6,6 @@ import org.json.simple.JSONObject;
 
 public class IncidenceData {
     
-    private String country;
     private Date day;
     private int totalCases;
     private int newCases;
@@ -21,4 +20,40 @@ public class IncidenceData {
 
     }
 
+
+    public Date getDay() {
+        return day;
+    }
+
+    public int getTotalCases() {
+        return totalCases;
+    }
+
+    public int getNewCases() {
+        return newCases;
+    }
+
+    public int getActiveCases() {
+        return activeCases;
+    }
+
+    public int getNewActiveCases() {
+        return newActiveCases;
+    }
+
+    public int getDeathTotal() {
+        return deathTotal;
+    }
+
+    public int getNewDeaths() {
+        return newDeaths;
+    }
+
+    public int getRecovered() {
+        return recovered;
+    }
+
+    public int getNewRecovered() {
+        return newRecovered;
+    }
 }

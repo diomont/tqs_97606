@@ -12,7 +12,7 @@
 	<artifactId>covid-tracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>covid-tracker</name>
-	<description>Demo project for Spring Boot</description>
+	<description>TQS Midterm Assignment - COVID incidence data tracker</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

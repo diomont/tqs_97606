@@ -21,7 +21,7 @@ public class ApiRequestService {
         return null;
     }
 
-    public IncidenceData get_country_data_for_day(Date day) {
+    public IncidenceData get_country_data_for_day(String country, Date day) {
         return null;
     }
 
@@ -29,7 +29,7 @@ public class ApiRequestService {
         return null;
     }
 
-    public List<IncidenceData> get_country_data_for_period(Date start, Date end) {
+    public List<IncidenceData> get_country_data_for_period(String country, Date start, Date end) {
         return null;
     }
 
