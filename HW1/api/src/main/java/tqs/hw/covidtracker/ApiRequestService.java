@@ -1,40 +1,42 @@
 package tqs.hw.covidtracker;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.time.Duration;
+import java.util.Date;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class ApiRequestService {
     
-    private static final int TIMEOUT = 5;  // timeout for external API requests in seconds
+    @Autowired
+    private JsonHttpClient client;
 
-    public void makeApiCall(String requestUrl) {
-
-        // Global data for given date
-        // https://covid-19-statistics.p.rapidapi.com/reports/total?date=2020-04-07
-
-        // Data for given date and country ISO or name
-        // https://covid-19-statistics.p.rapidapi.com/reports?date=2020-04-16&region_name=US&iso=USA
-
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(requestUrl))
-            .header("X-RapidAPI-Host", "covid-19-statistics.p.rapidapi.com")
-            .header("X-RapidAPI-Key", "2e80b150efmsha5f9e8009deca47p14cf71jsn2f93e7f1494f")
-            .method("GET", HttpRequest.BodyPublishers.noBody())
-            .timeout(Duration.ofSeconds(TIMEOUT))
-            .build();
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
-        }
-        catch (IOException e) {
-            //TODO: handle exception
-        }
-        catch (InterruptedException e) {
-            //TODO: handle exception
-        }
+    public ApiRequestService(JsonHttpClient client) {
+        this.client = client;
     }
+
+
+    public IncidenceData get_global_data_for_day(Date day) {
+        return null;
+    }
+
+    public IncidenceData get_country_data_for_day(Date day) {
+        return null;
+    }
+
+    public List<IncidenceData> get_global_data_for_period(Date start, Date end) {
+        return null;
+    }
+
+    public List<IncidenceData> get_country_data_for_period(Date start, Date end) {
+        return null;
+    }
+
+    public List<String> get_countries() {
+        return null;
+    }
+
+
+    
 }
