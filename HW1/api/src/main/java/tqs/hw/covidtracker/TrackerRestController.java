@@ -18,7 +18,7 @@ public class TrackerRestController {
     private ApiRequestService apiService;
 
 
-    @GetMapping(path = "/")
+    @GetMapping(path = "/incidence")
     public ResponseEntity<IncidenceData> getCovidData(
         @RequestParam(name = "country") Optional<String> countryName,
         @RequestParam(name = "iso")     Optional<String> countryIso,

@@ -30,7 +30,7 @@ public class Cache<T> {
         }
     }
 
-
+    private long requests;
     private long hits;
     private long misses;
     private Map<String, Entry> cache;
@@ -40,6 +40,10 @@ public class Cache<T> {
         misses = 0;
         this.timeToLive = timeToLive;
         cache = new HashMap<>();
+    }
+
+    public long getRequests() {
+        return requests;
     }
 
     public long getHits() {

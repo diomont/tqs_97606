@@ -17,23 +17,23 @@ public class ApiRequestService {
     }
 
 
-    public IncidenceData get_global_data_for_day(Date day) {
+    public IncidenceData getGlobalDataForDay(Date day) {
         return null;
     }
 
-    public IncidenceData get_country_data_for_day(String country, Date day) {
+    public IncidenceData getCountryDataForDayByIso(String countryIso, Date day) {
         return null;
     }
 
-    public List<IncidenceData> get_global_data_for_period(Date start, Date end) {
+    public List<IncidenceData> getGlobalDataForPeriod(Date start, Date end) {
         return null;
     }
 
-    public List<IncidenceData> get_country_data_for_period(String country, Date start, Date end) {
+    public List<IncidenceData> getCountryDataForPeriodByIso(String country, Date start, Date end) {
         return null;
     }
 
-    public List<String> get_countries() {
+    public List<String> getRegions() {
         return null;
     }
 

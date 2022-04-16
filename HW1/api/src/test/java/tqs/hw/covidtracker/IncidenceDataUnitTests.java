@@ -1,32 +1,32 @@
 package tqs.hw.covidtracker;
 
-import java.sql.Date;
+import java.text.ParseException;
 import java.util.HashMap;
 
 import org.json.simple.JSONObject;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class IncidenceDataUnitTests {
     
     @Test
-    void testConstructor() {
+    void testConstructor() throws ParseException {
         HashMap<String, Object> map = new HashMap<>();
         map.put("date", "2020-04-16");
-        map.put("confirmed", "18800");
-        map.put("deaths", "630");
-        map.put("recovered", "500");
-        map.put("confirmed_diff", "750");
-        map.put("deaths_diff", "30");
-        map.put("recovered_diff", "110");
-        map.put("active", "17700");
-        map.put("active_diff", "610");
+        map.put("confirmed", 18800);
+        map.put("deaths", 630);
+        map.put("recovered", 500);
+        map.put("confirmed_diff", 750);
+        map.put("deaths_diff", 30);
+        map.put("recovered_diff", 110);
+        map.put("active", 17700);
+        map.put("active_diff", 610);
 
         JSONObject data = new JSONObject(map);
         IncidenceData incidenceData = new IncidenceData(data);
 
-        assertThat(incidenceData.getDay()).isEqualTo(Date.valueOf("2020-04-16"));
+        assertThat(incidenceData.getDay()).isEqualTo("2020-04-16");
         assertThat(incidenceData.getTotalCases()).isEqualTo(18800);
         assertThat(incidenceData.getDeathTotal()).isEqualTo(630);
         assertThat(incidenceData.getRecovered()).isEqualTo(500);
