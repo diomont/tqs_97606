@@ -2,15 +2,13 @@ package tqs.hw.covidtracker;
 
 import static org.mockito.Mockito.when;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -46,8 +44,8 @@ public class ApiRequestServiceTests {
     private IncidenceData glo3Data;
 
 
-    @BeforeAll
-    public void setupAll() throws ParseException, java.text.ParseException {
+    @BeforeEach
+    public void setupEach() throws ParseException, java.text.ParseException {
         pt1 = (JSONObject) new JSONParser().parse(
             "{\"data\":[{\"date\":\"2020-04-16\",\"confirmed\":18841,\"deaths\":629,\"recovered\":493,\"confirmed_diff\":750,\"deaths_diff\":30,\"recovered_diff\":110,\"last_update\":\"2020-04-16 23:30:31\",\"active\":17719,\"active_diff\":610,\"fatality_rate\":0.0334,\"region\":{\"iso\":\"PRT\",\"name\":\"Portugal\",\"province\":\"\",\"lat\":\"39.3999\",\"long\":\"-8.2245\",\"cities\":[]}}]}"
         );
@@ -78,11 +76,7 @@ public class ApiRequestServiceTests {
         glo1Data = new IncidenceData(glo1);
         glo2Data = new IncidenceData(glo2);
         glo3Data = new IncidenceData(glo3);
-    }
 
-
-    @BeforeEach
-    public void setupEach() throws ParseException {
         when(client.makeApiCall(Mockito.contains("date=2020-04-16&region_name=Portugal"))).thenReturn(Optional.of(pt1));
         when(client.makeApiCall(Mockito.contains("date=2020-04-16&iso=PRT"))).thenReturn(Optional.of(pt1));
         when(client.makeApiCall(Mockito.contains("date=2020-04-15&iso=PRT"))).thenReturn(Optional.of(pt2));
@@ -98,22 +92,24 @@ public class ApiRequestServiceTests {
 
     @Test
     void getGlobalDataForDayTest() throws java.text.ParseException {
-        Date day = new SimpleDateFormat().parse("2020-04-15");
-        IncidenceData result = apiRequestService.getGlobalDataForDay(day);
-        assertThat(result).isEqualTo(glo2Data);
+        LocalDate day = LocalDate.parse("2020-04-15");
+        Optional<IncidenceData> result = apiRequestService.getGlobalDataForDay(day);
+        assertThat(result).isPresent();
+        assertThat(result.get()).isEqualTo(glo2Data);
     }
 
     @Test
     void getCountryDataForDayByIsoTest() throws java.text.ParseException {
-        Date day = new SimpleDateFormat().parse("2020-04-15");
-        IncidenceData result = apiRequestService.getCountryDataForDayByIso("PRT", day);
-        assertThat(result).isEqualTo(pt2Data);
+        LocalDate day = LocalDate.parse("2020-04-15");
+        Optional<IncidenceData> result = apiRequestService.getCountryDataForDayByIso("PRT", day);
+        assertThat(result).isPresent();
+        assertThat(result.get()).isEqualTo(pt2Data);
     }
 
     @Test
     void getGlobalDataForPeriodTest() throws java.text.ParseException {
-        Date start = new SimpleDateFormat().parse("2020-04-14");
-        Date end = new SimpleDateFormat().parse("2020-04-16");
+        LocalDate start = LocalDate.parse("2020-04-14");
+        LocalDate end = LocalDate.parse("2020-04-16");
         List<IncidenceData> result = apiRequestService.getGlobalDataForPeriod(start, end);
 
         assertThat(result).containsExactlyInAnyOrder(glo1Data, glo2Data, glo3Data);
@@ -121,8 +117,8 @@ public class ApiRequestServiceTests {
 
     @Test
     void getCountryDataForPeriodByIsoTest() throws java.text.ParseException {
-        Date start = new SimpleDateFormat().parse("2020-04-14");
-        Date end = new SimpleDateFormat().parse("2020-04-16");
+        LocalDate start = LocalDate.parse("2020-04-14");
+        LocalDate end = LocalDate.parse("2020-04-16");
         List<IncidenceData> result = apiRequestService.getCountryDataForPeriodByIso("PRT", start, end);
 
         assertThat(result).containsExactlyInAnyOrder(pt1Data, pt2Data, pt3Data);

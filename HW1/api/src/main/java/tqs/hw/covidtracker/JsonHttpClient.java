@@ -16,7 +16,7 @@ public class JsonHttpClient {
     
     private static final int TIMEOUT = 5;  // timeout for external API requests in seconds
 
-    public Optional<JSONObject> makeApiCall(String requestUrl) {
+    public Optional<JSONObject> makeApiCall(String requestUri) {
 
         // Global data for given date
         // https://covid-19-statistics.p.rapidapi.com/reports/total?date=2020-04-07
@@ -26,7 +26,7 @@ public class JsonHttpClient {
 
         try {
             HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(requestUrl))
+            .uri(URI.create(requestUri))
             .header("X-RapidAPI-Host", "covid-19-statistics.p.rapidapi.com")
             .header("X-RapidAPI-Key", "2e80b150efmsha5f9e8009deca47p14cf71jsn2f93e7f1494f")
             .method("GET", HttpRequest.BodyPublishers.noBody())

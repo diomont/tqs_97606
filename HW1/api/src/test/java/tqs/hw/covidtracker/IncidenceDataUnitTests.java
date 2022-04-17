@@ -23,8 +23,11 @@ public class IncidenceDataUnitTests {
         map.put("active", 17700);
         map.put("active_diff", 610);
 
-        JSONObject data = new JSONObject(map);
-        IncidenceData incidenceData = new IncidenceData(data);
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("data", map);
+
+        JSONObject json = new JSONObject(data);
+        IncidenceData incidenceData = new IncidenceData(json);
 
         assertThat(incidenceData.getDay()).isEqualTo("2020-04-16");
         assertThat(incidenceData.getTotalCases()).isEqualTo(18800);
