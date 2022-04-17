@@ -14,7 +14,7 @@ public class CacheUnitTests {
 
     @BeforeEach
     public void setup() {
-        cache = new Cache<>(1);
+        cache = new Cache<>(1200);
     }
 
 

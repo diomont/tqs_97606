@@ -2,6 +2,7 @@ package tqs.hw.covidtracker;
 
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 import org.json.simple.JSONObject;
@@ -18,19 +19,27 @@ public class IncidenceData {
     private int recovered;
     private int newRecovered;
 
+    public IncidenceData() {};
+
+    @SuppressWarnings("unchecked")
     public IncidenceData(JSONObject json) throws ParseException {
-        Map<String, Object> data = (Map<String, Object>) json.get("data");
+        Map<String, Object> data;
+        try {
+            data = (Map<String, Object>) (((List<Map<String, Object>>) json.get("data")).get(0));
+        }
+        catch (Exception e) {
+            data = (Map<String, Object>) json.get("data");
+        }
 
         this.day = LocalDate.parse((String) data.get("date"));
-        //this.day = (LocalDate) data.get("date");
-        this.totalCases = (int) data.get("confirmed");
-        this.newCases = (int) data.get("confirmed_diff");
-        this.activeCases = (int) data.get("active");
-        this.newActiveCases = (int) data.get("active_diff");
-        this.deathTotal = (int) data.get("deaths");
-        this.newDeaths = (int) data.get("deaths_diff");
-        this.recovered = (int) data.get("recovered");
-        this.newRecovered = (int) data.get("recovered_diff");
+        this.totalCases = ((Long) data.get("confirmed")).intValue();
+        this.newCases = ((Long) data.get("confirmed_diff")).intValue();
+        this.activeCases = ((Long) data.get("active")).intValue();
+        this.newActiveCases = ((Long) data.get("active_diff")).intValue();
+        this.deathTotal = ((Long) data.get("deaths")).intValue();
+        this.newDeaths = ((Long) data.get("deaths_diff")).intValue();
+        this.recovered = ((Long) data.get("recovered")).intValue();
+        this.newRecovered = ((Long) data.get("recovered_diff")).intValue();
     }
 
     public LocalDate getDay() {
@@ -105,5 +114,53 @@ public class IncidenceData {
         this.newRecovered = newRecovered;
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + activeCases;
+        result = prime * result + ((day == null) ? 0 : day.hashCode());
+        result = prime * result + deathTotal;
+        result = prime * result + newActiveCases;
+        result = prime * result + newCases;
+        result = prime * result + newDeaths;
+        result = prime * result + newRecovered;
+        result = prime * result + recovered;
+        result = prime * result + totalCases;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        IncidenceData other = (IncidenceData) obj;
+        if (activeCases != other.activeCases)
+            return false;
+        if (day == null) {
+            if (other.day != null)
+                return false;
+        } else if (!day.equals(other.day))
+            return false;
+        if (deathTotal != other.deathTotal)
+            return false;
+        if (newActiveCases != other.newActiveCases)
+            return false;
+        if (newCases != other.newCases)
+            return false;
+        if (newDeaths != other.newDeaths)
+            return false;
+        if (newRecovered != other.newRecovered)
+            return false;
+        if (recovered != other.recovered)
+            return false;
+        if (totalCases != other.totalCases)
+            return false;
+        return true;
+    }
     
 }

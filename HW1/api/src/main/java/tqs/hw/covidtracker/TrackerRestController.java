@@ -20,7 +20,6 @@ public class TrackerRestController {
     @Autowired
     private ApiRequestService apiService;
 
-
     @GetMapping(path = "/incidence")
     public ResponseEntity<IncidenceData> getCovidData(
         @RequestParam(name = "country") Optional<String> countryName,
@@ -77,9 +76,14 @@ public class TrackerRestController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping(path = "/regions")
+    public ResponseEntity<List<String>> getRegions() {
+        return new ResponseEntity<>(apiService.getRegions(), HttpStatus.OK);
+    }
+
     @GetMapping(path = "/cache_stats")
-    public ResponseEntity<Map<String, String>> getCacheStats() {
-        return null;
+    public ResponseEntity<Map<String, Long>> getCacheStats() {
+        return new ResponseEntity<>(apiService.getCacheStats(), HttpStatus.OK);
     }
 
 }

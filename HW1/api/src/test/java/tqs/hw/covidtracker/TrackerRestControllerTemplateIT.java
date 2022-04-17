@@ -72,7 +72,7 @@ public class TrackerRestControllerTemplateIT {
         });
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(response.getBody()).containsKeys("requests", "hits", "misses");
+        assertThat(response.getBody()).containsKeys("requests", "hits", "misses", "time-to-live");
     }
 
 }
