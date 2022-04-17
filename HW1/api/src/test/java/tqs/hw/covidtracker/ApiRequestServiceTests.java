@@ -20,7 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
-public class ApiRequestServiceTests {
+class ApiRequestServiceTests {
     
     @Mock(lenient = true)
     private JsonHttpClient client;
@@ -45,7 +45,7 @@ public class ApiRequestServiceTests {
 
 
     @BeforeEach
-    public void setupEach() throws ParseException, java.text.ParseException {
+    void setupEach() throws ParseException, java.text.ParseException {
         pt1 = (JSONObject) new JSONParser().parse(
             "{\"data\":[{\"date\":\"2020-04-16\",\"confirmed\":18841,\"deaths\":629,\"recovered\":493,\"confirmed_diff\":750,\"deaths_diff\":30,\"recovered_diff\":110,\"last_update\":\"2020-04-16 23:30:31\",\"active\":17719,\"active_diff\":610,\"fatality_rate\":0.0334,\"region\":{\"iso\":\"PRT\",\"name\":\"Portugal\",\"province\":\"\",\"lat\":\"39.3999\",\"long\":\"-8.2245\",\"cities\":[]}}]}"
         );
@@ -95,7 +95,7 @@ public class ApiRequestServiceTests {
         LocalDate day = LocalDate.parse("2020-04-15");
         Optional<IncidenceData> result = apiRequestService.getGlobalDataForDay(day);
         assertThat(result).isPresent();
-        assertThat(result.get()).isEqualTo(glo2Data);
+        assertThat(result).contains(glo2Data);
     }
 
     @Test
@@ -103,7 +103,7 @@ public class ApiRequestServiceTests {
         LocalDate day = LocalDate.parse("2020-04-15");
         Optional<IncidenceData> result = apiRequestService.getCountryDataForDayByIso("PRT", day);
         assertThat(result).isPresent();
-        assertThat(result.get()).isEqualTo(pt2Data);
+        assertThat(result).contains(pt2Data);
     }
 
     @Test

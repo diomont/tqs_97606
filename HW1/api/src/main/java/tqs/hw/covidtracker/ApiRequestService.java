@@ -1,6 +1,5 @@
 package tqs.hw.covidtracker;
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ApiRequestService {
 
-    private final String BASE_URI = "https://covid-19-statistics.p.rapidapi.com/";
+    private static final String BASE_URI = "https://covid-19-statistics.p.rapidapi.com/";
 
     private JsonHttpClient client;
     private Cache<Optional<JSONObject>> cache;
@@ -80,7 +79,7 @@ public class ApiRequestService {
             @SuppressWarnings("unchecked")
             List<Map<String, String>> data = (List<Map<String, String>>) response.get().get("data");
             ArrayList<String> regions = new ArrayList<>();
-            data.forEach((Map<String, String> region) -> {regions.add(region.get("name"));});
+            data.forEach((Map<String, String> region) -> regions.add(region.get("name")));
             return regions;
         }
     }
@@ -100,11 +99,7 @@ public class ApiRequestService {
             return Optional.empty();
         }
         else {
-            try {
-                return Optional.of(new IncidenceData(data.get()));
-            } catch (ParseException e) {
-                return Optional.empty();
-            }
+            return Optional.of(new IncidenceData(data.get()));
         }
     }
     

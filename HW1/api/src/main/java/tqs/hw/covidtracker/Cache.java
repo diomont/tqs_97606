@@ -39,6 +39,8 @@ public class Cache<T> {
     private long misses;
     private Map<String, CacheEntry> cache;
 
+    private boolean running = true;
+
     /**
      * @param timeToLive How long entries remain in memory in milliseconds
      */
@@ -48,15 +50,15 @@ public class Cache<T> {
         this.timeToLive = timeToLive;
         cache = new HashMap<>();
 
-        Thread t = new Thread(new Runnable() {
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(intervalTimer);
-                    }
-                    catch (InterruptedException e) {}
-                    cleanup();
+        Thread t = new Thread(() -> {
+            while (running) {
+                try {
+                    Thread.sleep(intervalTimer);
                 }
+                catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                cleanup();
             }
         });
         t.setDaemon(true);

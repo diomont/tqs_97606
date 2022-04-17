@@ -32,12 +32,7 @@ public class TrackerRestController {
         IncidenceData response = null;
 
         if (date.isPresent()) {
-            Optional<IncidenceData> res;
-            if (countryIso.isPresent())
-                res = apiService.getCountryDataForDayByIso(countryIso.get(), LocalDate.parse(date.get()));
-            else
-                res = apiService.getGlobalDataForDay(LocalDate.parse(date.get()));
-            if (res.isPresent()) response = res.get();
+            response = getDataForDay(countryIso, date.get());
         }
         else if (startDate.isPresent() && endDate.isPresent()) {
             LocalDate startAsLocalDate = LocalDate.parse(startDate.get());
@@ -45,29 +40,10 @@ public class TrackerRestController {
             if (startAsLocalDate.isAfter(endAsLocalDate))
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             
-            List<IncidenceData> res;
-            if (countryIso.isPresent())
-                res = apiService.getCountryDataForPeriodByIso(countryIso.get(), startAsLocalDate, endAsLocalDate);
-            else
-                res = apiService.getGlobalDataForPeriod(startAsLocalDate, endAsLocalDate);
-
-            // update the last entry of the list with the sum of all difference stats 
-            for (int i = 0; i < res.size()-1; i++) {
-                res.get(res.size()-1).setNewCases      (res.get(res.size()-1).getNewCases()     + res.get(i).getNewCases());
-                res.get(res.size()-1).setNewActiveCases(res.get(res.size()-1).getActiveCases()  + res.get(i).getActiveCases());
-                res.get(res.size()-1).setNewDeaths     (res.get(res.size()-1).getNewDeaths()    + res.get(i).getNewDeaths());
-                res.get(res.size()-1).setNewRecovered  (res.get(res.size()-1).getNewRecovered() + res.get(i).getNewRecovered());
-            }
-            if (!res.isEmpty()) response = res.get(res.size()-1);
+            response = getDataForPeriod(countryIso, startAsLocalDate, endAsLocalDate);
         }
         else {
-            Optional<IncidenceData> res;
-            if (countryIso.isPresent())
-                res = apiService.getLatestCountryDataByIso(countryIso.get());
-            else
-                res = apiService.getLatestGlobalData();
-
-            if (res.isPresent()) response = res.get();
+            response = getLatestData(countryIso);
         }
 
         if (response != null)
@@ -84,6 +60,52 @@ public class TrackerRestController {
     @GetMapping(path = "/cache_stats")
     public ResponseEntity<Map<String, Long>> getCacheStats() {
         return new ResponseEntity<>(apiService.getCacheStats(), HttpStatus.OK);
+    }
+
+
+    private IncidenceData getLatestData(Optional<String> countryIso) {
+        Optional<IncidenceData> res;
+        if (countryIso.isPresent())
+            res = apiService.getLatestCountryDataByIso(countryIso.get());
+        else
+            res = apiService.getLatestGlobalData();
+
+        if (res.isPresent())
+            return res.get();
+        else
+            return null;
+    }
+
+    private IncidenceData getDataForDay(Optional<String> countryIso, String datestring) {
+        Optional<IncidenceData> res;
+        if (countryIso.isPresent())
+            res = apiService.getCountryDataForDayByIso(countryIso.get(), LocalDate.parse(datestring));
+        else
+            res = apiService.getGlobalDataForDay(LocalDate.parse(datestring));
+        if (res.isPresent())
+            return res.get();
+        else
+            return null;
+    }
+
+    private IncidenceData getDataForPeriod(Optional<String> countryIso, LocalDate startDate, LocalDate endDate) {
+        List<IncidenceData> res;
+        if (countryIso.isPresent())
+            res = apiService.getCountryDataForPeriodByIso(countryIso.get(), startDate, endDate);
+        else
+            res = apiService.getGlobalDataForPeriod(startDate, endDate);
+
+        // update the last entry of the list with the sum of all difference stats 
+        for (int i = 0; i < res.size()-1; i++) {
+            res.get(res.size()-1).setNewCases      (res.get(res.size()-1).getNewCases()     + res.get(i).getNewCases());
+            res.get(res.size()-1).setNewActiveCases(res.get(res.size()-1).getActiveCases()  + res.get(i).getActiveCases());
+            res.get(res.size()-1).setNewDeaths     (res.get(res.size()-1).getNewDeaths()    + res.get(i).getNewDeaths());
+            res.get(res.size()-1).setNewRecovered  (res.get(res.size()-1).getNewRecovered() + res.get(i).getNewRecovered());
+        }
+        if (res.isEmpty())
+            return null;
+        else
+            return res.get(res.size()-1);
     }
 
 }

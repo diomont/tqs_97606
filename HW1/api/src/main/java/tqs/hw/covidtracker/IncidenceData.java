@@ -1,6 +1,5 @@
 package tqs.hw.covidtracker;
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -19,13 +18,13 @@ public class IncidenceData {
     private int recovered;
     private int newRecovered;
 
-    public IncidenceData() {};
+    public IncidenceData() {}
 
     @SuppressWarnings("unchecked")
-    public IncidenceData(JSONObject json) throws ParseException {
+    public IncidenceData(JSONObject json) {
         Map<String, Object> data;
         try {
-            data = (Map<String, Object>) (((List<Map<String, Object>>) json.get("data")).get(0));
+            data = (((List<Map<String, Object>>) json.get("data")).get(0));
         }
         catch (Exception e) {
             data = (Map<String, Object>) json.get("data");

@@ -16,8 +16,6 @@ public class JsonHttpClient {
     
     private static final int TIMEOUT = 5;  // timeout for external API requests in seconds
 
-    public JsonHttpClient() {}
-
     public Optional<JSONObject> makeApiCall(String requestUri) {
         try {
             HttpRequest request = HttpRequest.newBuilder()
@@ -28,9 +26,12 @@ public class JsonHttpClient {
             .timeout(Duration.ofSeconds(TIMEOUT))
             .build();
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
             JSONObject data = (JSONObject) new JSONParser().parse(response.body());
             return Optional.of(data);
+        }
+        catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return Optional.empty();
         }
         catch (Exception e) {
            return Optional.empty();

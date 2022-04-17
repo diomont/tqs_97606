@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Map;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class TrackerRestControllerTemplateIT {
+class TrackerRestControllerTemplateIT {
     
     @LocalServerPort
     int randomServerPort;
