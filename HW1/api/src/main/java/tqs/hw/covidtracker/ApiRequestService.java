@@ -20,7 +20,7 @@ public class ApiRequestService {
 
     public ApiRequestService(JsonHttpClient client) {
         this.client = client;
-        this.cache = new Cache<>(20);
+        this.cache = new Cache<>(20000);
     }
 
     public Optional<IncidenceData> getLatestGlobalData() {

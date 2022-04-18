@@ -27,7 +27,12 @@ public class IncidenceData {
             data = (((List<Map<String, Object>>) json.get("data")).get(0));
         }
         catch (Exception e) {
-            data = (Map<String, Object>) json.get("data");
+            try {
+                data = (Map<String, Object>) json.get("data");
+            }
+            catch (Exception e2) {
+                return;
+            }
         }
 
         this.day = LocalDate.parse((String) data.get("date"));
