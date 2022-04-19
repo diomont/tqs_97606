@@ -66,6 +66,15 @@ class TrackerRestControllerTemplateIT {
     }
 
     @Test
+    void whenGetIncidenceWithInvalidDateFormat_thenStatus400() {
+        ResponseEntity<IncidenceData> response = restTemplate
+            .exchange("/api/v1/incidence?date=badformat", HttpMethod.GET, null, new ParameterizedTypeReference<IncidenceData>() {
+        });
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+    }
+
+    @Test
     void whenGetCacheStats_thenReturnStats_thenStatus200() {
         ResponseEntity<Map<String, String>> response = restTemplate
             .exchange("/api/v1/cache_stats", HttpMethod.GET, null, new ParameterizedTypeReference<Map<String, String>>() {

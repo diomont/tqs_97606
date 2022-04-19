@@ -126,8 +126,13 @@ class ApiRequestServiceTests {
 
     @Test
     void getRegionsTest() {
-        List<String> result = apiRequestService.getRegions();
-        assertThat(result).containsExactlyInAnyOrder("China", "Taipei and environs", "US", "Japan");
+        List<String[]> result = apiRequestService.getRegions();
+        assertThat(result).containsExactlyInAnyOrder(
+            new String[] {"CHN", "China"},
+            new String[] {"TWN", "Taipei and environs"},
+            new String[] {"USA", "US"},
+            new String[] {"JPN", "Japan"}
+        );
     }
 
 

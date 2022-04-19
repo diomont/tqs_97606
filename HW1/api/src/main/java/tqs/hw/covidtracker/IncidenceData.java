@@ -34,7 +34,10 @@ public class IncidenceData {
                 return;
             }
         }
+        setProperties(data);
+    }
 
+    private void setProperties(Map<String, Object> data) {
         this.day = LocalDate.parse((String) data.get("date"));
         this.totalCases = ((Long) data.get("confirmed")).intValue();
         this.newCases = ((Long) data.get("confirmed_diff")).intValue();

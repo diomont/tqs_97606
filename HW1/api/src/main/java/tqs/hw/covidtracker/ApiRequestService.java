@@ -69,7 +69,11 @@ public class ApiRequestService {
         return ret;
     }
 
-    public List<String> getRegions() {
+    /**
+     * Get list of available regions names and iso codes
+     * @return A list of String arrays of size 2, where index 0 is the iso code, and index 1 is the region name
+     */
+    public List<String[]> getRegions() {
         String uri = BASE_URI + "regions";
         Optional<JSONObject> response = getFromCacheOrFetch(uri);
 
@@ -78,8 +82,8 @@ public class ApiRequestService {
         else {
             @SuppressWarnings("unchecked")
             List<Map<String, String>> data = (List<Map<String, String>>) response.get().get("data");
-            ArrayList<String> regions = new ArrayList<>();
-            data.forEach((Map<String, String> region) -> regions.add(region.get("name")));
+            ArrayList<String[]> regions = new ArrayList<>();
+            data.forEach((Map<String, String> region) -> regions.add(new String[] {region.get("iso"), region.get("name")}));
             return regions;
         }
     }
