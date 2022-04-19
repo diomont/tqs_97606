@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.isA;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-class TrackerRestControllerIT {
+class TrackerRestControllerITest {
     
     @LocalServerPort
     int randomServerPort;
@@ -50,8 +50,6 @@ class TrackerRestControllerIT {
             .andExpect(status().isOk())
             .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$", hasKey("day")));
-            //.andExpect(jsonPath("$[0].name", is("bob")))
-            //.andExpect(jsonPath("$[1].name", is("alex")));
         expectNumberFields(actions);
     }
 

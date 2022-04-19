@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Map;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-class TrackerRestControllerTemplateIT {
+class TrackerRestControllerTemplateITest {
     
     @LocalServerPort
     int randomServerPort;
@@ -57,6 +57,39 @@ class TrackerRestControllerTemplateIT {
     }
 
     @Test
+    void whenGetIncidenceWithIsoAndDate_thenReturnDataForDate_thenStatus200() {
+        ResponseEntity<IncidenceData> response = restTemplate
+            .exchange("/api/v1/incidence?iso=PRT&date=2022-04-15", HttpMethod.GET, null, new ParameterizedTypeReference<IncidenceData>() {
+        });
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isInstanceOf(IncidenceData.class);
+        assertThat(response.getBody().getDay()).isEqualTo("2022-04-15");
+    }
+
+    @Test
+    void whenGetIncidenceWithStartAndEndDate_thenReturnDataForPeriod_thenStatus200() {
+        ResponseEntity<IncidenceData> response = restTemplate
+            .exchange("/api/v1/incidence?start=2022-04-12&end=2022-04-15", HttpMethod.GET, null, new ParameterizedTypeReference<IncidenceData>() {
+        });
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isInstanceOf(IncidenceData.class);
+        assertThat(response.getBody().getDay()).isEqualTo("2022-04-15");
+    }
+
+    @Test
+    void whenGetIncidenceWithIsoAndStartAndEndDate_thenReturnDataForPeriod_thenStatus200() {
+        ResponseEntity<IncidenceData> response = restTemplate
+            .exchange("/api/v1/incidence?iso=PRT&start=2022-04-12&end=2022-04-15", HttpMethod.GET, null, new ParameterizedTypeReference<IncidenceData>() {
+        });
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isInstanceOf(IncidenceData.class);
+        assertThat(response.getBody().getDay()).isEqualTo("2022-04-15");
+    }
+
+    @Test
     void whenGetIncidenceWithStartDateLaterThanEndDate_thenStatus400() {
         ResponseEntity<IncidenceData> response = restTemplate
             .exchange("/api/v1/incidence?start=2022-04-15&end=2022-04-03", HttpMethod.GET, null, new ParameterizedTypeReference<IncidenceData>() {
@@ -72,6 +105,15 @@ class TrackerRestControllerTemplateIT {
         });
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+    }
+
+    @Test
+    void whenGetIncidenceWithNonexistentIso_thenStatus404() {
+        ResponseEntity<IncidenceData> response = restTemplate
+            .exchange("/api/v1/incidence?iso=badiso", HttpMethod.GET, null, new ParameterizedTypeReference<IncidenceData>() {
+        });
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test

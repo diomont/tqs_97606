@@ -103,7 +103,10 @@ public class ApiRequestService {
             return Optional.empty();
         }
         else {
-            return Optional.of(new IncidenceData(data.get()));
+            IncidenceData incidenceData = new IncidenceData(data.get());
+            if (incidenceData.getDay() == null)
+                return Optional.empty();
+            return Optional.of(incidenceData);
         }
     }
     
