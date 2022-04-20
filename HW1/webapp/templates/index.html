@@ -12,7 +12,7 @@
         <div class="col-10 mx-auto">
             <div class="row">
                 <div class="col-3 p-4">
-                    <h3>Region:</h3>
+                    <h4>Region:</h4>
                     <select class="form-select form-select-lg" aria-label="Region" id="regionSelect">
                         <option value="global" selected>Global</option>
                         {% for region in regions %}
@@ -22,14 +22,42 @@
             
                     <br/>
 
-                    <h3>Date:</h3>
-                    <input type="date" class="form-control form-control-lg" id="datePicker" />
+                    <ul class="nav nav-tabs mt-2" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="date-tab" data-bs-toggle="tab" data-bs-target="#dateContent" type="button" role="tab" aria-controls="home" aria-selected="true">Date</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="period-tab" data-bs-toggle="tab" data-bs-target="#periodContent" type="button" role="tab" aria-controls="profile" aria-selected="false">Period</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content my-2">
+                        <div class="tab-pane fade show active" id="dateContent" role="tabpanel" aria-labelledby="date-tab">
+                            <h4>Date:</h4>
+                            <input type="date" class="form-control form-control-lg" id="datePicker" />
 
-                    <button class="btn btn-lg btn-primary" type="button" onclick="lookup()">Lookup</button>
+                            <button class="btn btn-lg btn-primary mt-3" type="button" onclick="lookupDate()">Lookup</button>
+                        </div>
+                        <div class="tab-pane fade" id="periodContent" role="tabpanel" aria-labelledby="period-tab">
+                            <h4>Start date:</h4>
+                            <input type="date" class="form-control form-control-lg" id="startDatePicker" />
+                            <br/>
+                            <h4>End date:</h4>
+                            <input type="date" class="form-control form-control-lg" id="endDatePicker" />
+
+                            <button class="btn btn-lg btn-primary mt-3" type="button" onclick="lookupPeriod()">Lookup</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-9 p-4 text-center">
-                    <h2 class="mb-2">{{ region_name }}</h2>
+                    <h2 class="mb-4">
+                        {{ region_name }}
+                        {% if date %}
+                            , {{date}}
+                        {% elif start_date and end_date %}
+                            , {{start_date}} to {{end_date}}
+                        {% endif %}
+                    </h2>
                     <div class="row">
                         <div class="col">
                             <h4>Total Cases</h4>
@@ -68,21 +96,49 @@
 
         <script>
 
-            function lookup() {
+            function lookupDate() {
                 let select = document.getElementById("regionSelect")
                 let regionIso = select.value
                 let regionName= select.options[select.selectedIndex].text;
                 let date = document.getElementById("datePicker").value
 
-                console.log(regionIso)
-                console.log(regionName)
-                console.log(date)
-
                 let newLoc = `/?region=${regionIso}&regionname=${regionName}`
-                if (date) newLoc += `&${date}`
+                if (date) newLoc += `&date=${date}`
 
                 window.location = newLoc
             }
+
+            function lookupPeriod() {
+                let select = document.getElementById("regionSelect")
+                let regionIso = select.value
+                let regionName= select.options[select.selectedIndex].text
+                let startDate = document.getElementById("startDatePicker").value
+                let endDate = document.getElementById("endDatePicker").value
+
+                if (!startDate) {
+                    alert("No start date selected!")
+                    return
+                }
+
+                if (!endDate) {
+                    endDate = new Date().toISOString().slice(0, 10)
+                }
+
+                if (new Date(startDate).valueOf() > new Date(endDate).valueOf()) {
+                    alert("Start date cannot be later than end date!")
+                    return
+                }
+
+                if (new Date(startDate).valueOf() == new Date(endDate).valueOf()) {
+                    let newLoc = `/?region=${regionIso}&regionname=${regionName}&date=${startDate}`
+                    window.location = newLoc
+                    return
+                }
+
+                let newLoc = `/?region=${regionIso}&regionname=${regionName}&start=${startDate}&end=${endDate}`
+                window.location = newLoc
+            }
+
         </script>
     </body>
 </html>
