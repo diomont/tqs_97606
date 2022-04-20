@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,8 @@ public class TrackerRestController {
     @Autowired
     private ApiRequestService apiService;
 
+    final static Logger logger = LoggerFactory.getLogger(TrackerRestController.class);
+
     @GetMapping(path = "/incidence")
     public ResponseEntity<IncidenceData> getCovidData(
         @RequestParam(name = "country") Optional<String> countryName,
@@ -29,7 +33,7 @@ public class TrackerRestController {
         @RequestParam(name = "end")     Optional<String> endDate,
         @RequestParam(name = "date")    Optional<String> date
     ) {
-
+        logger.info("GET request for /incidence");
         IncidenceData response = null;
 
         try {
@@ -59,11 +63,13 @@ public class TrackerRestController {
 
     @GetMapping(path = "/regions")
     public ResponseEntity<List<String[]>> getRegions() {
+        logger.info("GET request for /regions");
         return new ResponseEntity<>(apiService.getRegions(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/cache_stats")
     public ResponseEntity<Map<String, Long>> getCacheStats() {
+        logger.info("GET request for /cache_stats");
         return new ResponseEntity<>(apiService.getCacheStats(), HttpStatus.OK);
     }
 
