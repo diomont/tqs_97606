@@ -1,0 +1,425 @@
+{
+  "id": "56e64468-67d6-4043-8bce-7d95ddd7f9fe",
+  "version": "2.0",
+  "name": "tqs_hw1",
+  "url": "http://127.0.0.1:5000",
+  "tests": [{
+    "id": "e2cd1b8d-74c7-44ab-8e7c-8820e48f76d7",
+    "name": "lookup_global_for_day",
+    "commands": [{
+      "id": "85658bf4-94db-4af8-b510-8720aed172d9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f80b1ca-6500-4779-9856-fe0deaf077b7",
+      "comment": "",
+      "command": "click",
+      "target": "id=datePicker",
+      "targets": [
+        ["id=datePicker", "id"],
+        ["css=#datePicker", "css:finder"],
+        ["xpath=//input[@id='datePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='dateContent']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74dcbcdf-f887-40ff-8f99-f31dd486eebc",
+      "comment": "",
+      "command": "type",
+      "target": "id=datePicker",
+      "targets": [
+        ["id=datePicker", "id"],
+        ["css=#datePicker", "css:finder"],
+        ["xpath=//input[@id='datePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='dateContent']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2022-04-19"
+    }, {
+      "id": "5b881c96-ea7a-4067-8369-792f5d16b974",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='dateContent']/button",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='dateContent']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Lookup')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4cf04ff-24d0-4b6b-9944-a83e1c880d32",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-4",
+      "targets": [
+        ["css=.mb-4", "css:finder"],
+        ["xpath=//h2", "xpath:position"]
+      ],
+      "value": "Global , 2022-04-19"
+    }]
+  }, {
+    "id": "088881f4-930b-4961-8e18-7790e10794c0",
+    "name": "lookup_global_for_period",
+    "commands": [{
+      "id": "825d28d5-b418-464c-9f45-3611d49b78d3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89eba124-398b-4370-9c2a-ad835e1df35f",
+      "comment": "",
+      "command": "click",
+      "target": "id=period-tab",
+      "targets": [
+        ["id=period-tab", "id"],
+        ["css=#period-tab", "css:finder"],
+        ["xpath=//button[@id='period-tab']", "xpath:attributes"],
+        ["xpath=//li[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Period')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f8c1b78-715c-4204-b94c-520186587452",
+      "comment": "",
+      "command": "click",
+      "target": "id=startDatePicker",
+      "targets": [
+        ["id=startDatePicker", "id"],
+        ["css=#startDatePicker", "css:finder"],
+        ["xpath=//input[@id='startDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b392cdc5-5452-407c-8854-4c0c3e280d37",
+      "comment": "",
+      "command": "type",
+      "target": "id=startDatePicker",
+      "targets": [
+        ["id=startDatePicker", "id"],
+        ["css=#startDatePicker", "css:finder"],
+        ["xpath=//input[@id='startDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2022-04-18"
+    }, {
+      "id": "d1bae912-caeb-47e8-a104-874e26349d41",
+      "comment": "",
+      "command": "click",
+      "target": "id=endDatePicker",
+      "targets": [
+        ["id=endDatePicker", "id"],
+        ["css=#endDatePicker", "css:finder"],
+        ["xpath=//input[@id='endDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fad4d3f3-170f-46b8-afe9-94e0a86fbc35",
+      "comment": "",
+      "command": "type",
+      "target": "id=endDatePicker",
+      "targets": [
+        ["id=endDatePicker", "id"],
+        ["css=#endDatePicker", "css:finder"],
+        ["xpath=//input[@id='endDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2022-04-20"
+    }, {
+      "id": "13a08a05-1cee-4784-9cc6-4ec01d4fee93",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='periodContent']/button",
+      "targets": [
+        ["css=.btn:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "534f9769-8451-4b36-b157-0527bce49c64",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-4",
+      "targets": [
+        ["css=.mb-4", "css:finder"],
+        ["xpath=//h2", "xpath:position"]
+      ],
+      "value": "Global , 2022-04-18 to 2022-04-20"
+    }]
+  }, {
+    "id": "fbdf58bb-8ba5-46d9-ad98-14aa10addb2a",
+    "name": "lookup_region",
+    "commands": [{
+      "id": "e51d43fa-0b9f-4083-bba4-4735b29b4f83",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "92b4a26a-03c9-4f38-a854-3708a2ab85ce",
+      "comment": "",
+      "command": "click",
+      "target": "id=regionSelect",
+      "targets": [
+        ["id=regionSelect", "id"],
+        ["css=#regionSelect", "css:finder"],
+        ["xpath=//select[@id='regionSelect']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f714baa1-a6dc-4a28-a0cc-814dc76bfca7",
+      "comment": "",
+      "command": "select",
+      "target": "id=regionSelect",
+      "targets": [],
+      "value": "label=Portugal"
+    }, {
+      "id": "7f70e38e-f1e3-4e4c-ba26-e888919c96ca",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='dateContent']/button",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='dateContent']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Lookup')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b170228-1e14-4a78-94dc-13ef1ba355b6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-4",
+      "targets": [
+        ["css=.mb-4", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Portugal')]", "xpath:innerText"]
+      ],
+      "value": "Portugal"
+    }]
+  }, {
+    "id": "25df412c-6e3e-4c60-a761-53a2329dbe04",
+    "name": "look_up_region_for_day",
+    "commands": [{
+      "id": "a42ffa00-89de-4585-8b6a-1d9f6323363b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2eea1a10-798b-43a6-a6ad-7dc56c6e715f",
+      "comment": "",
+      "command": "click",
+      "target": "id=regionSelect",
+      "targets": [
+        ["id=regionSelect", "id"],
+        ["css=#regionSelect", "css:finder"],
+        ["xpath=//select[@id='regionSelect']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bfd1ff5-def7-401a-b077-542d725c681f",
+      "comment": "",
+      "command": "select",
+      "target": "id=regionSelect",
+      "targets": [],
+      "value": "label=Portugal"
+    }, {
+      "id": "483c6c4f-3c12-4589-a2fd-8ba895a92ac0",
+      "comment": "",
+      "command": "click",
+      "target": "id=datePicker",
+      "targets": [
+        ["id=datePicker", "id"],
+        ["css=#datePicker", "css:finder"],
+        ["xpath=//input[@id='datePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='dateContent']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a3627b0-9d37-4817-8d75-1f14100ff8c7",
+      "comment": "",
+      "command": "type",
+      "target": "id=datePicker",
+      "targets": [
+        ["id=datePicker", "id"],
+        ["css=#datePicker", "css:finder"],
+        ["xpath=//input[@id='datePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='dateContent']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2022-04-20"
+    }, {
+      "id": "55fac8fa-0909-40db-a3f3-43e796c7d1f0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='dateContent']/button",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='dateContent']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Lookup')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e451f097-4490-4afb-9f3b-16f73c3fd1ce",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-4",
+      "targets": [
+        ["css=.mb-4", "css:finder"],
+        ["xpath=//h2", "xpath:position"]
+      ],
+      "value": "Portugal , 2022-04-20"
+    }]
+  }, {
+    "id": "8a7b8d38-596d-49cb-8c9c-e5df1363b921",
+    "name": "lookup_region_for_period",
+    "commands": [{
+      "id": "8da5dd78-6888-4ed7-ab30-3d9fb9d2a0f8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4357432f-bfd7-436a-a060-90770df38abe",
+      "comment": "",
+      "command": "click",
+      "target": "id=regionSelect",
+      "targets": [
+        ["id=regionSelect", "id"],
+        ["css=#regionSelect", "css:finder"],
+        ["xpath=//select[@id='regionSelect']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "162bf12c-89de-4cdf-82dd-1007e78380d1",
+      "comment": "",
+      "command": "select",
+      "target": "id=regionSelect",
+      "targets": [],
+      "value": "label=Portugal"
+    }, {
+      "id": "e2532692-224c-4fe0-9fa0-37258ca202bf",
+      "comment": "",
+      "command": "click",
+      "target": "id=period-tab",
+      "targets": [
+        ["id=period-tab", "id"],
+        ["css=#period-tab", "css:finder"],
+        ["xpath=//button[@id='period-tab']", "xpath:attributes"],
+        ["xpath=//li[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Period')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "31d5d2e3-b702-4966-9618-8e9a61bf6d1a",
+      "comment": "",
+      "command": "click",
+      "target": "id=startDatePicker",
+      "targets": [
+        ["id=startDatePicker", "id"],
+        ["css=#startDatePicker", "css:finder"],
+        ["xpath=//input[@id='startDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a29f40e-5d02-4946-bf54-f49873e88ce5",
+      "comment": "",
+      "command": "type",
+      "target": "id=startDatePicker",
+      "targets": [
+        ["id=startDatePicker", "id"],
+        ["css=#startDatePicker", "css:finder"],
+        ["xpath=//input[@id='startDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2022-04-14"
+    }, {
+      "id": "34033df8-408c-4992-ada9-ee36b19108ef",
+      "comment": "",
+      "command": "click",
+      "target": "id=endDatePicker",
+      "targets": [
+        ["id=endDatePicker", "id"],
+        ["css=#endDatePicker", "css:finder"],
+        ["xpath=//input[@id='endDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e370e599-3cd4-43fc-8627-c2ffd06de117",
+      "comment": "",
+      "command": "type",
+      "target": "id=endDatePicker",
+      "targets": [
+        ["id=endDatePicker", "id"],
+        ["css=#endDatePicker", "css:finder"],
+        ["xpath=//input[@id='endDatePicker']", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2022-04-17"
+    }, {
+      "id": "793cdb96-f180-49ae-8264-f681723bbf51",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='periodContent']/button",
+      "targets": [
+        ["css=.btn:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='periodContent']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6768e735-f96b-4314-be5f-456da431245d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-4",
+      "targets": [
+        ["css=.mb-4", "css:finder"],
+        ["xpath=//h2", "xpath:position"]
+      ],
+      "value": "Portugal , 2022-04-14 to 2022-04-17"
+    }]
+  }],
+  "suites": [{
+    "id": "f385d6b1-1193-41ee-8078-950e5e8744cf",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://127.0.0.1:5000/"],
+  "plugins": []
+}
