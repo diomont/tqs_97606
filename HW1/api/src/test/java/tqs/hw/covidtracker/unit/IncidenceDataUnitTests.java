@@ -1,4 +1,4 @@
-package tqs.hw.covidtracker;
+package tqs.hw.covidtracker.unit;
 
 import java.text.ParseException;
 import java.util.HashMap;
@@ -6,6 +6,8 @@ import java.util.HashMap;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import tqs.hw.covidtracker.IncidenceData;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

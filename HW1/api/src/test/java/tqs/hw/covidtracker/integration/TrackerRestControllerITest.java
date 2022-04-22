@@ -1,4 +1,4 @@
-package tqs.hw.covidtracker;
+package tqs.hw.covidtracker.integration;
 
 import org.junit.jupiter.api.Test;
 

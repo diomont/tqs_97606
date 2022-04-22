@@ -1,4 +1,4 @@
-package tqs.hw.covidtracker;
+package tqs.hw.covidtracker.unit;
 
 import static org.mockito.Mockito.when;
 
@@ -16,6 +16,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import tqs.hw.covidtracker.ApiRequestService;
+import tqs.hw.covidtracker.IncidenceData;
+import tqs.hw.covidtracker.JsonHttpClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

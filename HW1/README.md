@@ -4,7 +4,11 @@
 
 ### API
 
-...
+In the `/api` directory:
+
+```bash
+mvn spring-boot:run
+```
 
 ### Webapp
 
