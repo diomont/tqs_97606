@@ -1,4 +1,4 @@
-package tqs.hw.covidtracker;
+package tqs.hw.covidtracker.integration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,8 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import tqs.hw.covidtracker.IncidenceData;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

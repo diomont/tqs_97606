@@ -1,5 +1,6 @@
 Feature: Lookup COVID-19 data on the website
 
+
     Scenario: Lookup global data for a given day
         When I navigate to "http://localhost:5000"
         And I enter "2022-04-19" on the date picker

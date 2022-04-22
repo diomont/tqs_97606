@@ -1,10 +1,12 @@
-package tqs.hw.covidtracker;
+package tqs.hw.covidtracker.unit;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import tqs.hw.covidtracker.Cache;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

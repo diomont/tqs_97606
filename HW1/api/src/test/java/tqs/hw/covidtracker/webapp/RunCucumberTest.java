@@ -1,4 +1,4 @@
-package tqs.hw.covidtracker;
+package tqs.hw.covidtracker.webapp;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;

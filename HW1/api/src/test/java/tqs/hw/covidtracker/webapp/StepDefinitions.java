@@ -1,4 +1,4 @@
-package tqs.hw.covidtracker;
+package tqs.hw.covidtracker.webapp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -24,13 +24,14 @@ public class StepDefinitions {
     @Before
     public void setup() {
         isPeriodTab = false;
+        driver = new FirefoxDriver();
     }
 
 
     @When("I navigate to {string}")
     public void iNavigateTo(String url) {
-        driver = new FirefoxDriver();
-        driver.get(url);
+
+        driver.get("http://localhost:5000");
     }
 
     @When("I select {string} as the region")
