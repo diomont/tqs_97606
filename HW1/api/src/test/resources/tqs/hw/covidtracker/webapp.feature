@@ -25,7 +25,7 @@ Feature: Lookup COVID-19 data on the website
     
     Scenario: Lookup region data for a given day
         When I navigate to "http://localhost:5000"
-        And I select "Portugal" as the 
+        And I select "Portugal" as the region
         And I enter "2022-04-19" on the date picker
         And I click the Lookup button
         Then I should see "Portugal" in the results

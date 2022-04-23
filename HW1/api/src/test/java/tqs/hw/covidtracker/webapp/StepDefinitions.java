@@ -11,12 +11,9 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-//import io.github.bonigarcia.wdm.WebDriverManager;
-
 
 
 public class StepDefinitions {
-
 
     private WebDriver driver;
     private boolean isPeriodTab;
@@ -30,8 +27,7 @@ public class StepDefinitions {
 
     @When("I navigate to {string}")
     public void iNavigateTo(String url) {
-
-        driver.get("http://localhost:5000");
+        driver.get(url);
     }
 
     @When("I select {string} as the region")
@@ -52,6 +48,7 @@ public class StepDefinitions {
     @When("I click the Period tab")
     public void iClickThePeriodTab() {
         driver.findElement(By.id("period-tab")).click();
+        isPeriodTab = true;
     }
 
     @When("I enter {string} on the start date picker")

@@ -15,7 +15,7 @@
 	<description>TQS Midterm Assignment - COVID incidence data tracker</description>
 	<properties>
 		<java.version>11</java.version>
-        <selenium-java.version>4.1.2</selenium-java.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
         <webdrivermanager.version>5.1.0</webdrivermanager.version>
 	</properties>
 
@@ -79,12 +79,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
             <scope>test</scope>
         </dependency>
 	</dependencies>
