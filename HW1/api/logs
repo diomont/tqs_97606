@@ -412,3 +412,101 @@
 2022-04-23 19:30:36.202  INFO 23567 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
 2022-04-23 19:30:49.001  INFO 23567 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /regions
 2022-04-23 19:30:49.008  INFO 23567 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:06.561  INFO 60378 --- [restartedMain] t.h.c.CovidTrackerApplication            : Starting CovidTrackerApplication using Java 11.0.14.1 on diogo-Legion with PID 60378 (/home/diogo/Desktop/TQS/HW1/api/target/classes started by diogo in /home/diogo/Desktop/TQS/HW1/api)
+2022-04-23 22:27:06.562  INFO 60378 --- [restartedMain] t.h.c.CovidTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-04-23 22:27:06.588  INFO 60378 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-23 22:27:06.588  INFO 60378 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-23 22:27:07.056  INFO 60378 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-23 22:27:07.061  INFO 60378 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-23 22:27:07.062  INFO 60378 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 22:27:07.103  INFO 60378 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-23 22:27:07.103  INFO 60378 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 514 ms
+2022-04-23 22:27:07.257  INFO 60378 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-23 22:27:07.271  INFO 60378 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-23 22:27:07.278  INFO 60378 --- [restartedMain] t.h.c.CovidTrackerApplication            : Started CovidTrackerApplication in 0.96 seconds (JVM running for 1.173)
+2022-04-23 22:27:31.127  INFO 60378 --- [restartedMain] t.h.c.CovidTrackerApplication            : Starting CovidTrackerApplication using Java 11.0.14.1 on diogo-Legion with PID 60378 (/home/diogo/Desktop/TQS/HW1/api/target/classes started by diogo in /home/diogo/Desktop/TQS/HW1/api)
+2022-04-23 22:27:31.128  INFO 60378 --- [restartedMain] t.h.c.CovidTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-04-23 22:27:31.317  INFO 60378 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-23 22:27:31.318  INFO 60378 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-23 22:27:31.318  INFO 60378 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 22:27:31.324  INFO 60378 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-23 22:27:31.324  INFO 60378 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 195 ms
+2022-04-23 22:27:31.397  INFO 60378 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-23 22:27:31.402  INFO 60378 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-23 22:27:31.405  INFO 60378 --- [restartedMain] t.h.c.CovidTrackerApplication            : Started CovidTrackerApplication in 0.295 seconds (JVM running for 25.3)
+2022-04-23 22:27:31.408  INFO 60378 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-23 22:27:32.898  INFO 60643 --- [main] t.h.c.i.TrackerRestControllerITest       : Starting TrackerRestControllerITest using Java 11.0.14.1 on diogo-Legion with PID 60643 (started by diogo in /home/diogo/Desktop/TQS/HW1/api)
+2022-04-23 22:27:32.900  INFO 60643 --- [main] t.h.c.i.TrackerRestControllerITest       : No active profile set, falling back to 1 default profile: "default"
+2022-04-23 22:27:34.055  INFO 60643 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-04-23 22:27:34.069  INFO 60643 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-23 22:27:34.069  INFO 60643 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 22:27:34.167  INFO 60643 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-23 22:27:34.168  INFO 60643 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1234 ms
+2022-04-23 22:27:34.632  INFO 60643 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2022-04-23 22:27:34.632  INFO 60643 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-04-23 22:27:34.633  INFO 60643 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-04-23 22:27:34.820  INFO 60643 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 34597 (http) with context path ''
+2022-04-23 22:27:34.832  INFO 60643 --- [main] t.h.c.i.TrackerRestControllerITest       : Started TrackerRestControllerITest in 2.354 seconds (JVM running for 4.051)
+2022-04-23 22:27:35.190  INFO 60643 --- [main] t.hw.covidtracker.TrackerRestController  : GET request for /cache_stats
+2022-04-23 22:27:35.314  INFO 60643 --- [main] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:35.362  INFO 60643 --- [main] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:36.577  INFO 60643 --- [main] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:39.121  INFO 60643 --- [main] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:39.768  INFO 60643 --- [main] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:39.779  INFO 60643 --- [main] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:39.790  INFO 60643 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [tqs.hw.covidtracker.integration.TrackerRestControllerTemplateITest], using SpringBootContextLoader
+2022-04-23 22:27:39.791  INFO 60643 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [tqs.hw.covidtracker.integration.TrackerRestControllerTemplateITest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-04-23 22:27:39.792  INFO 60643 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.hw.covidtracker.integration.TrackerRestControllerTemplateITest]: TrackerRestControllerTemplateITest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-04-23 22:27:39.793  INFO 60643 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.hw.covidtracker.CovidTrackerApplication for test class tqs.hw.covidtracker.integration.TrackerRestControllerTemplateITest
+2022-04-23 22:27:39.795  INFO 60643 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-04-23 22:27:39.796  INFO 60643 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5538acff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@441b80bf, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@623ffed6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@27961c61, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@37590338, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f5f6314, org.springframework.test.context.event.EventPublishingTestExecutionListener@320be167, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@25699653, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5ad60105, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@e458e88, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@63a846fe, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@a9a9fd6, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@60ae79a9]
+2022-04-23 22:27:39.846  INFO 60643 --- [main] h.c.i.TrackerRestControllerTemplateITest : Starting TrackerRestControllerTemplateITest using Java 11.0.14.1 on diogo-Legion with PID 60643 (started by diogo in /home/diogo/Desktop/TQS/HW1/api)
+2022-04-23 22:27:39.846  INFO 60643 --- [main] h.c.i.TrackerRestControllerTemplateITest : No active profile set, falling back to 1 default profile: "default"
+2022-04-23 22:27:40.097  INFO 60643 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-04-23 22:27:40.099  INFO 60643 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-23 22:27:40.099  INFO 60643 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 22:27:40.111  INFO 60643 --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-04-23 22:27:40.111  INFO 60643 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 262 ms
+2022-04-23 22:27:40.355  INFO 60643 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 35343 (http) with context path ''
+2022-04-23 22:27:40.359  INFO 60643 --- [main] h.c.i.TrackerRestControllerTemplateITest : Started TrackerRestControllerTemplateITest in 0.56 seconds (JVM running for 9.578)
+2022-04-23 22:27:40.565  INFO 60643 --- [http-nio-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 22:27:40.566  INFO 60643 --- [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-23 22:27:40.567  INFO 60643 --- [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-23 22:27:40.578  INFO 60643 --- [http-nio-auto-2-exec-1] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:41.373  INFO 60643 --- [http-nio-auto-2-exec-2] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:43.344  INFO 60643 --- [http-nio-auto-2-exec-3] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:43.752  INFO 60643 --- [http-nio-auto-2-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /cache_stats
+2022-04-23 22:27:43.770  INFO 60643 --- [http-nio-auto-2-exec-5] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:43.779  INFO 60643 --- [http-nio-auto-2-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:44.299  INFO 60643 --- [http-nio-auto-2-exec-7] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:46.624  INFO 60643 --- [http-nio-auto-2-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:47.130  INFO 60643 --- [http-nio-auto-2-exec-9] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:47.144  INFO 60643 --- [http-nio-auto-2-exec-10] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:51.710  INFO 60643 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-04-23 22:27:51.767  INFO 60378 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 22:27:51.768  INFO 60378 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-23 22:27:51.769  INFO 60378 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-23 22:27:51.780  INFO 60378 --- [http-nio-8080-exec-1] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:27:52.641  INFO 60378 --- [http-nio-8080-exec-2] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:53.782  INFO 60378 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:27:53.787  INFO 60378 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:57.028  INFO 60643 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-04-23 22:27:57.042  INFO 60378 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:27:57.046  INFO 60378 --- [http-nio-8080-exec-10] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:27:58.158  INFO 60378 --- [http-nio-8080-exec-2] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:27:58.164  INFO 60378 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:28:02.086  INFO 60643 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-04-23 22:28:02.095  INFO 60378 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:28:02.099  INFO 60378 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:28:02.949  INFO 60378 --- [http-nio-8080-exec-10] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:28:02.955  INFO 60378 --- [http-nio-8080-exec-2] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:28:05.764  INFO 60643 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-04-23 22:28:05.773  INFO 60378 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:28:05.778  INFO 60378 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:28:06.934  INFO 60378 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:28:06.940  INFO 60378 --- [http-nio-8080-exec-10] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:28:10.035  INFO 60643 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-04-23 22:28:10.052  INFO 60378 --- [http-nio-8080-exec-2] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:28:10.057  INFO 60378 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 22:28:11.682  INFO 60378 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 22:28:11.685  INFO 60378 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
