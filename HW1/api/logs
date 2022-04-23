@@ -402,3 +402,13 @@
 2022-04-23 17:47:46.617  INFO 23567 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
 2022-04-23 17:47:48.285  INFO 23567 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /regions
 2022-04-23 17:47:48.295  INFO 23567 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 19:29:57.413  INFO 23567 --- [http-nio-8080-exec-10] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 19:29:58.029  INFO 23567 --- [http-nio-8080-exec-2] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 19:30:19.905  INFO 23567 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 19:30:20.446  INFO 23567 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 19:30:29.653  INFO 23567 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 19:30:29.659  INFO 23567 --- [http-nio-8080-exec-10] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 19:30:36.196  INFO 23567 --- [http-nio-8080-exec-2] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 19:30:36.202  INFO 23567 --- [http-nio-8080-exec-4] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
+2022-04-23 19:30:49.001  INFO 23567 --- [http-nio-8080-exec-6] t.hw.covidtracker.TrackerRestController  : GET request for /regions
+2022-04-23 19:30:49.008  INFO 23567 --- [http-nio-8080-exec-8] t.hw.covidtracker.TrackerRestController  : GET request for /incidence
