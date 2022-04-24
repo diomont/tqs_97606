@@ -1,8 +1,10 @@
 package tqs.lab3_2cars;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -10,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
@@ -26,13 +29,14 @@ import static org.hamcrest.Matchers.*;
 @Testcontainers
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = "spring.jpa.hibernate.ddl-auto=create")
+@AutoConfigureMockMvc
 public class CarControllerTests {
 
     @LocalServerPort
     private int localPort;
 
-    //@Autowired
-    //private MockMvc mvc;
+    @Autowired
+    private MockMvc mvc;
 
     @Autowired
     private CarRepository repository;
@@ -54,7 +58,8 @@ public class CarControllerTests {
 
     @BeforeEach
     void setup() {
-        standaloneSetup(new CarController());
+        //standaloneSetup(new CarController());
+        mockMvc(mvc);
     }
 
 
@@ -115,7 +120,6 @@ public class CarControllerTests {
     @Test
     void givenCars_whenGetCar_thenReturnJson() throws Exception {
         Car seat = new Car("Seat", "Ibiza");
-        seat.setCarId(222L);
 
         repository.saveAndFlush(seat);
 
@@ -129,7 +133,7 @@ public class CarControllerTests {
 
         given()
         .when()
-            .get(uri, seat.getCarId())
+            .get(uri)
         .then()
             .status(HttpStatus.OK)
             .body("maker", equalTo("Seat"))
@@ -151,6 +155,11 @@ public class CarControllerTests {
             .get(uri)
         .then()
             .status(HttpStatus.NOT_FOUND);
+    }
+
+    @AfterEach
+    void cleanup() {
+        repository.deleteAll();
     }
 
 }
