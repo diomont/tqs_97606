@@ -27,12 +27,3 @@ Then run the following commands to install the dependencies and run the server:
 pip install -r requirements.txt
 flask run
 ```
-
-## Tests
-
-### Cache
-
-The cache should:
-- When a get for X is made, then no result should be found, X should added to the cache and misses should be 1
-- Given the cache has X, when a get for X is made, then X should be retrieved and hits should be 1
-- Given the cache has X, when a get for X is made after its time-to-live has passed, then no result should be found, X should added to the cache and misses should be 1
